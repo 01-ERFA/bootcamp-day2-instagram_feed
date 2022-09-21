@@ -1,0 +1,54 @@
+* {
+    margin:0;
+    padding: 0;
+}
+
+#my_box {
+    margin: auto;
+}
+
+/* Colores */
+
+.my_color_red {
+    color:red;
+}
+
+
+/* Pocisiones */
+
+.my_posts {
+    display: flex;
+    width: 100%;
+}
+
+.my_margin_auto * {
+    margin: 2% auto;
+}
+
+.my_padding_left_icon_modal {
+    padding-left: 2.5%;
+}
+
+.my_title_post {
+    text-align: left;
+}
+
+/*  ERRORES
+-----------------------------------------------------------------------------------------
+    ERROR - linea 41
+    
+    Clase que genera el problema:
+        d-flex justify-content-end
+
+    Problema: no deja ocultar los elementos disminuir el ancho de la pagina
+        nota: si se apreta en la hamburguesa intenta ocultarlos pero no lo logra, devolviendolos. 
+
+
+    Resolucion: poniendo la clase en un div que envuelve todo, la hamburguesa sí cierra y los esconde,
+                pero queda despocicionada y los botones aparecen al costado. 
+
+-----------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------
+
+*/

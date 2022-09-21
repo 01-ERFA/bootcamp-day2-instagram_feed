@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Instagram Photo Feed with Bootstrap</title>
+        <link rel="icon" href="images/instagram.svg">
+
+        <!-- boostrap styles -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+        <!-- boostrap icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+        <!-- fontawesome icons -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+        <!-- local styles (my_etc_etc)-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        <div id="my_box" class="col-xs-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11">
+
+            <!-- navbar header boostrap -->
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+
+                    <!-- icono de Istagram boostrap + el titulo de Instagram-->
+
+                    <a class="navbar-brand" href="#">
+                        <i class="bi bi-instagram"></i> Instagram
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <!-- d-flex justify-content-end - estas clase mueven el boton de crear un post y el de opciones a la derecha -->
+                    <div class="d-flex justify-content-end">
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                            <ul class="navbar-nav">
+
+                                <!-- El boton para crear un nuevo post con el link -->
+                                <li class="nav-item">
+
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Create a New Post
+                                    </button>
+
+                                    <!-- modal flotante al apretar el boton -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <!-- modal cabecera -->
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Create a New Post:</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+
+                                                <!-- modal body -->
+                                                <div class="modal-body">
+                                                    <!-- input titulo -->
+                                                    <div class="row g-2">
+                                                        <div class="col-md">
+                                                            <div class="form-floating">
+                                                                <input type="email" class="form-control" id="floatingInputGrid" placeholder="My title">
+                                                                <label for="floatingInputGrid">Title</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- texto -->
+                                                    Caption
+
+                                                    <!-- input descripcion -->
+
+                                                    <div class="form-floating">
+                                                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                        <label for="floatingTextarea2">Comments</label>
+                                                    </div>
+
+                                                    <!-- iconos camara y ubicacion | my_padding_left_icon_modal - da una leve separacion entre los iconos -->
+                                                    <i class="bi bi-camera-fill"></i>
+                                                    <i class="bi bi-geo-alt-fill my_padding_left_icon_modal"></i>
+                                                </div>
+
+                                                <!-- modal footer -->
+                                                <div class="modal-footer">
+
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Publish</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Opciones desplegables de Ajustes -->
+                                <li class="nav-item">
+                                    <div class="btn-group">
+
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                
+                                            <!-- Icono de ajustes (boostrap) -->
+                                            <i class="bi bi-gear-fill"></i>
+                                        </button>
+
+                                        <!-- opciones de Ajustes -->
+                                        <ul class="dropdown-menu dropdown-menu-lg-end">
+
+                                            <li>
+                                                <a class="dropdown-item" href="#">Profile</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">Accesibility</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">Privacy and Data</a>
+                                            </li>
+
+                                            <hr>
+
+                                            <li>
+                                                <!-- my_color_red - vuelve el contenido de color rojo -->
+                                                <a class="dropdown-item my_color_red" href="#">Log Out</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>   
+                </div>
+            </nav>
+            <!-- fin del contenedor de la barra de arriba -->
+
+            <!-- navbar secondary and body of page -->
+
+            <!-- d-flex justify-content-center - esta clase los centra y alinea a los dos cuadrados -->
+            <nav class="d-flex justify-content-center">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <!-- squad icon boostrap - utilizados como img para este nav -->
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                        <i class="bi bi-square"></i>
+                    </button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        <i class="bi bi-square"></i>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- los dos cuerpos de la pagina web -->
+            <div class="tab-content" id="nav-tabContent">
+
+                <!-- one-body - carts (posts) -->
+                <!-- my_margin_auto - centrado y separacion en los post -->
+                <div class="tab-pane fade show active my_margin_auto" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+
+                    <!-- 1er - post -->
+                    <div class="card" style="width: 18rem;">
+                        <!-- my_posts - alinea el titulo y la fecha del post -->
+                        <div class="card-body my_posts">
+                            <p class="card-text my_title_post">
+                                My dog!
+                            </p>
+                            <p class="card-text">
+                                08/26
+                            </p>
+                        </div>
+                        <img src="images/dog.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+
+                    <!-- 2do - post -->
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body my_posts">
+                            <p class="card-text">
+                                Bonita playa!
+                            </p>
+                            <p class="card-text myright_date">
+                                12/12
+                            </p>
+                        </div>
+                        <img src="images/playa.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 3er - post -->
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body my_posts">
+                            <p class="card-text">
+                                Footbal!
+                            </p>
+                            <p class="card-text myright_date">
+                                08/17
+                            </p>
+                        </div>
+                        <img src="images/football.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- fin del primer cuerpo de la pagina -->
+
+                <!-- two-body - galeria de img's | columnas grid bootstrap -->
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="container text-center">
+
+                        <!-- 1era fila -->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/dog.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/playa.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/football.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/Cute-Baby.jpg" class="img-thumbnail">
+                            </div>
+                        </div>
+
+                        <!-- 2da fila -->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/Tema-Monokai-Pro.png" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/eiffel.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/Tema-shades-of-purple.png" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/cat.jpg" class="img-thumbnail">
+                            </div>
+                        </div>
+
+                        <!-- 3era fila -->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/ciudad.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/familia_playa.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/rosas.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/orcus.jpg" class="img-thumbnail">
+                            </div>
+                        </div>
+
+                        <!-- 4ta fila -->
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/cats.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/selfie.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/dog-cute.jpg" class="img-thumbnail">
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3">
+                                <img src="images/icescream.jpg" class="img-thumbnail">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- un pie de pagina (?) -->
+
+            <!-- col-sm- col-md- col-lg- col-xl- col-xxl-  -->
+
+        </div>
+
+        <!-- boostrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    </body>
+</html>
